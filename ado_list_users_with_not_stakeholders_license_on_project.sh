@@ -31,7 +31,7 @@ while IFS=$'\t' read -r name descriptor; do
                 --id ${descriptor} \
                 --query "@.* | [? subjectKind=='user' && metaType!=null && mailAddress!='azureprod@global.corp.sap' && mailAddress!='azuretest@global.corp.sap'].[mailAddress]" \
                 --output tsv)
-        .
+        
         echo ", members collected: ${count}"
 done < <(az devops security group list \
         --org ${organization} \
